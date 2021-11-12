@@ -60,11 +60,13 @@ void Calculator::displayResult()
     ui->resultLabel->setText(QString::number(this->result));
 }
 
+
 void Calculator::on_clearButton_clicked()
 {
     this->setEmpty();
     ui->resultLabel->setText(QString::number(this->result));
 }
+
 
 void Calculator::on_button1_clicked()
 {
@@ -76,10 +78,24 @@ void Calculator::on_button1_clicked()
         this->calculateResult();
 
     displayResult();
+    setEmpty(); // after calculating and displaying, reset data members
 }
 
 
+void Calculator::on_button2_clicked()
+{
+    this->number = 2;
+
+    if(!this->hasOperator)
+        this->result = this->number;
+    else
+        this->calculateResult();
+}
 
 
-
+void Calculator::on_buttonEqual_clicked()
+{
+    displayResult();
+    setEmpty(); // after calculating and displaying, reset data members
+}
 
