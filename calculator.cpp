@@ -124,3 +124,10 @@ void Calculator::on_button6_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button7_clicked()
+{
+    this->number = 7;
+    setOrCalculateResult();
+}
+
