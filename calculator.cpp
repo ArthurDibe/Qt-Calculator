@@ -165,3 +165,10 @@ void Calculator::on_buttonMinus_clicked()
     this->hasOperator = true;
 }
 
+
+void Calculator::on_buttonMultiply_clicked()
+{
+    this->operation = Operators::Multiply;
+    this->hasOperator = true;
+}
+
