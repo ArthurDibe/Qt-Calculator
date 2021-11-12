@@ -117,3 +117,10 @@ void Calculator::on_button5_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button6_clicked()
+{
+    this->number = 6;
+    setOrCalculateResult();
+}
+
