@@ -24,6 +24,7 @@ private slots:
     void on_buttonEqual_clicked();
     void on_clearButton_clicked();
     void setOrCalculateResult();
+    void on_button0_clicked();
     void on_button1_clicked();
     void on_button2_clicked();
     void on_button3_clicked();
