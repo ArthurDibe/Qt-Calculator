@@ -131,3 +131,10 @@ void Calculator::on_button7_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button8_clicked()
+{
+    this->number = 8;
+    setOrCalculateResult();
+}
+
