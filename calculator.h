@@ -27,6 +27,7 @@ private slots:
     void on_button1_clicked();
     void on_button2_clicked();
     void on_button3_clicked();
+    void on_button4_clicked();
 
 private:
     Ui::Calculator *ui;
