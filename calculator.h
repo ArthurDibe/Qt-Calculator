@@ -25,6 +25,7 @@ private slots:
     void on_buttonEqual_clicked();
     void on_clearButton_clicked();
     void setOrCalculateResult();
+    bool checkLastCharacter(const std::string obj_string);
 
     void on_button0_clicked();
     void on_button1_clicked();
