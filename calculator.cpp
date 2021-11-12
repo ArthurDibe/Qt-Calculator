@@ -84,10 +84,10 @@ void Calculator::on_clearButton_clicked()
 // otherwise set the result to the value of the current number
 void Calculator::setOrCalculateResult()
 {
-    if(!this->hasOperator)
-        this->result = this->number;
-    else
+    if(this->hasOperator)
         this->calculateResult();
+    else
+        this->result = this->number;
 }
 
 // handle the button 0
