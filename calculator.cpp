@@ -61,6 +61,13 @@ void Calculator::displayResult()
 }
 
 
+void Calculator::on_buttonEqual_clicked()
+{
+    displayResult();
+    setEmpty(); // after calculating and displaying, reset data members
+}
+
+
 void Calculator::on_clearButton_clicked()
 {
     this->setEmpty();
@@ -90,9 +97,13 @@ void Calculator::on_button2_clicked()
 }
 
 
-void Calculator::on_buttonEqual_clicked()
+void Calculator::on_button3_clicked()
 {
-    displayResult();
-    setEmpty(); // after calculating and displaying, reset data members
+    this->number = 3;
+
+    if(!this->hasOperator)
+        this->result = this->number;
+    else
+        this->calculateResult();
 }
 
