@@ -24,6 +24,7 @@ private slots:
     void on_buttonEqual_clicked();
     void on_clearButton_clicked();
     void setOrCalculateResult();
+
     void on_button0_clicked();
     void on_button1_clicked();
     void on_button2_clicked();
@@ -34,6 +35,8 @@ private slots:
     void on_button7_clicked();
     void on_button8_clicked();
     void on_button9_clicked();
+
+    void on_buttonPlus_clicked();
 
 private:
     Ui::Calculator *ui;
