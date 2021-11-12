@@ -103,3 +103,10 @@ void Calculator::on_button3_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button4_clicked()
+{
+    this->number = 4;
+    setOrCalculateResult();
+}
+
