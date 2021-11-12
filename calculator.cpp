@@ -92,6 +92,31 @@ void Calculator::setOrCalculateResult()
         this->result = this->number;
 }
 
+// Check if a string has an operator as a last character
+// returns true if the last character is an operator
+// false otherwise
+bool Calculator::checkLastCharacter(const std::string obj_string)
+{
+    bool found = false;
+    switch(obj_string.back())
+    {
+    case '+':
+        found = true;
+        break;
+    case '-':
+        found = true;
+        break;
+    case 'x':
+        found = true;
+        break;
+    case '/':
+        found = true;
+        break;
+    }
+
+    return found;
+}
+
 // handle the button 0
 void Calculator::on_button0_clicked()
 {
