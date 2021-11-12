@@ -26,6 +26,8 @@ void Calculator::setEmpty()
     this->number = 0;
     this->operation = Operators::None;
     this->hasOperator = false;
+    this->numberString = "";
+    this->calculationString = "";
 }
 
 // function to calculate the result based on the operation selected
