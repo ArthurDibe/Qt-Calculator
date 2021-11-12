@@ -110,3 +110,10 @@ void Calculator::on_button4_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button5_clicked()
+{
+    this->number = 5;
+    setOrCalculateResult();
+}
+
