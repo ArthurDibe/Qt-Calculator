@@ -158,3 +158,10 @@ void Calculator::on_buttonPlus_clicked()
     this->hasOperator = true;
 }
 
+
+void Calculator::on_buttonMinus_clicked()
+{
+    this->operation = Operators::Subtract;
+    this->hasOperator = true;
+}
+
