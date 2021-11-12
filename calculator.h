@@ -48,6 +48,8 @@ private:
     double number;
     bool hasOperator;
     Operators operation;
+    std::string numberString;
+    std::string calculationString;
 
 };
 #endif // CALCULATOR_H
