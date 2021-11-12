@@ -76,9 +76,6 @@ void Calculator::on_button1_clicked()
         this->result = this->number;
     else
         this->calculateResult();
-
-    displayResult();
-    setEmpty(); // after calculating and displaying, reset data members
 }
 
 
