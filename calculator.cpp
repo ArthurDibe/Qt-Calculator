@@ -172,3 +172,10 @@ void Calculator::on_buttonMultiply_clicked()
     this->hasOperator = true;
 }
 
+
+void Calculator::on_buttonDivide_clicked()
+{
+    this->operation = Operators::Divide;
+    this->hasOperator = true;
+}
+
