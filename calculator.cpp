@@ -83,6 +83,13 @@ void Calculator::setOrCalculateResult()
 }
 
 
+void Calculator::on_button0_clicked()
+{
+    this->number = 0;
+    setOrCalculateResult();
+}
+
+
 void Calculator::on_button1_clicked()
 {
     this->number = 1;
@@ -144,4 +151,3 @@ void Calculator::on_button9_clicked()
     this->number = 9;
     setOrCalculateResult();
 }
-
