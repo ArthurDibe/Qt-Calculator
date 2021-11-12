@@ -21,6 +21,7 @@ private slots:
     void setEmpty();
     void calculateResult();
     void displayResult();
+    void displayNumber();
     void on_buttonEqual_clicked();
     void on_clearButton_clicked();
     void setOrCalculateResult();
