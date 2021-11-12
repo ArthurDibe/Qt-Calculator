@@ -61,6 +61,12 @@ void Calculator::displayResult()
 }
 
 
+void Calculator::displayNumber()
+{
+    ui->resultLabel->setText(QString::number(this->number));
+}
+
+
 void Calculator::on_buttonEqual_clicked()
 {
     displayResult();
@@ -86,6 +92,7 @@ void Calculator::setOrCalculateResult()
 void Calculator::on_button0_clicked()
 {
     this->number = 0;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -93,6 +100,7 @@ void Calculator::on_button0_clicked()
 void Calculator::on_button1_clicked()
 {
     this->number = 1;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -100,6 +108,7 @@ void Calculator::on_button1_clicked()
 void Calculator::on_button2_clicked()
 {
     this->number = 2;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -107,6 +116,7 @@ void Calculator::on_button2_clicked()
 void Calculator::on_button3_clicked()
 {
     this->number = 3;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -114,6 +124,7 @@ void Calculator::on_button3_clicked()
 void Calculator::on_button4_clicked()
 {
     this->number = 4;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -121,6 +132,7 @@ void Calculator::on_button4_clicked()
 void Calculator::on_button5_clicked()
 {
     this->number = 5;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -128,6 +140,7 @@ void Calculator::on_button5_clicked()
 void Calculator::on_button6_clicked()
 {
     this->number = 6;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -135,6 +148,7 @@ void Calculator::on_button6_clicked()
 void Calculator::on_button7_clicked()
 {
     this->number = 7;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -142,6 +156,7 @@ void Calculator::on_button7_clicked()
 void Calculator::on_button8_clicked()
 {
     this->number = 8;
+    displayNumber();
     setOrCalculateResult();
 }
 
@@ -149,6 +164,7 @@ void Calculator::on_button8_clicked()
 void Calculator::on_button9_clicked()
 {
     this->number = 9;
+    displayNumber();
     setOrCalculateResult();
 }
 
