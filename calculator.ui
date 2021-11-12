@@ -340,6 +340,13 @@
       <number>6</number>
      </property>
      <item>
+      <widget class="QLabel" name="calculationLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="resultLabel">
        <property name="font">
         <font>
