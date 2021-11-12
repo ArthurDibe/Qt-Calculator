@@ -151,3 +151,10 @@ void Calculator::on_button9_clicked()
     this->number = 9;
     setOrCalculateResult();
 }
+
+void Calculator::on_buttonPlus_clicked()
+{
+    this->operation = Operators::Sum;
+    this->hasOperator = true;
+}
+
