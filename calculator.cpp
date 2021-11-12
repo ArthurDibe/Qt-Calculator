@@ -138,3 +138,10 @@ void Calculator::on_button8_clicked()
     setOrCalculateResult();
 }
 
+
+void Calculator::on_button9_clicked()
+{
+    this->number = 9;
+    setOrCalculateResult();
+}
+
