@@ -6,8 +6,7 @@ Calculator::Calculator(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Calculator)
 {
-    this->result = 0;
-
+    setEmpty();
     ui->setupUi(this);
     ui->resultLabel->setText(QString::number(this->result));
     this->setFixedSize(350,391); // set fixed size
@@ -74,6 +73,7 @@ void Calculator::on_buttonEqual_clicked()
     if(std::isdigit(this->calculationString.back())){
         this->calculationString += '=';
         displayResult();
+        updateCalculationLabel();
         setEmpty(); // after calculating and displaying, reset data members
     }
 }
@@ -82,7 +82,8 @@ void Calculator::on_buttonEqual_clicked()
 void Calculator::on_clearButton_clicked()
 {
     this->setEmpty();
-    ui->resultLabel->setText(QString::number(this->result));
+    displayResult();
+    updateCalculationLabel();
 }
 
 // check if an operator was selected before calculating the result
@@ -120,11 +121,18 @@ bool Calculator::checkLastCharacter(const std::string obj_string)
     return found;
 }
 
+// Update the calculation label
+void Calculator::updateCalculationLabel()
+{
+    ui->calculationLabel->setText(QString::fromStdString(this->calculationString));
+}
+
 // handle the button 0
 void Calculator::on_button0_clicked()
 {
     this->number = 0;
     this->calculationString += "0";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -134,6 +142,7 @@ void Calculator::on_button1_clicked()
 {
     this->number = 1;
     this->calculationString += "1";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -143,6 +152,7 @@ void Calculator::on_button2_clicked()
 {
     this->number = 2;
     this->calculationString += "2";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -152,6 +162,7 @@ void Calculator::on_button3_clicked()
 {
     this->number = 3;
     this->calculationString += "3";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -161,6 +172,7 @@ void Calculator::on_button4_clicked()
 {
     this->number = 4;
     this->calculationString += "4";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -170,6 +182,7 @@ void Calculator::on_button5_clicked()
 {
     this->number = 5;
     this->calculationString += "5";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -179,6 +192,7 @@ void Calculator::on_button6_clicked()
 {
     this->number = 6;
     this->calculationString += "6";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -188,6 +202,7 @@ void Calculator::on_button7_clicked()
 {
     this->number = 7;
     this->calculationString += "7";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -197,6 +212,7 @@ void Calculator::on_button8_clicked()
 {
     this->number = 8;
     this->calculationString += "8";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -206,6 +222,7 @@ void Calculator::on_button9_clicked()
 {
     this->number = 9;
     this->calculationString += "9";
+    updateCalculationLabel();
     displayNumber();
     setOrCalculateResult();
 }
@@ -219,6 +236,10 @@ void Calculator::on_buttonPlus_clicked()
     if(checkLastCharacter(this->calculationString)){
         this->calculationString.back() = '+';
     }
+    else{
+        this->calculationString += "+";
+    }
+    updateCalculationLabel();
 }
 
 // handle the button "-"
@@ -229,6 +250,10 @@ void Calculator::on_buttonMinus_clicked()
     if(checkLastCharacter(this->calculationString)){
         this->calculationString.back() = '-';
     }
+    else{
+        this->calculationString += "-";
+    }
+    updateCalculationLabel();
 }
 
 // handle the button "*"
@@ -239,6 +264,10 @@ void Calculator::on_buttonMultiply_clicked()
     if(checkLastCharacter(this->calculationString)){
         this->calculationString.back() = 'x';
     }
+    else{
+        this->calculationString += "x";
+    }
+    updateCalculationLabel();
 }
 
 // handle the button "/"
@@ -249,5 +278,9 @@ void Calculator::on_buttonDivide_clicked()
     if(checkLastCharacter(this->calculationString)){
         this->calculationString.back() = '/';
     }
+    else{
+        this->calculationString += "/";
+    }
+    updateCalculationLabel();
 }
 
