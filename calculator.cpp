@@ -71,8 +71,11 @@ void Calculator::displayNumber()
 // display the result of the calculation and then set all the data members to empty state
 void Calculator::on_buttonEqual_clicked()
 {
-    displayResult();
-    setEmpty(); // after calculating and displaying, reset data members
+    if(std::isdigit(this->calculationString.back())){
+        this->calculationString += '=';
+        displayResult();
+        setEmpty(); // after calculating and displaying, reset data members
+    }
 }
 
 // handle the clear button "CE"
@@ -212,6 +215,10 @@ void Calculator::on_buttonPlus_clicked()
 {
     this->operation = Operators::Sum;
     this->hasOperator = true;
+
+    if(checkLastCharacter(this->calculationString)){
+        this->calculationString.back() = '+';
+    }
 }
 
 // handle the button "-"
@@ -219,6 +226,9 @@ void Calculator::on_buttonMinus_clicked()
 {
     this->operation = Operators::Subtract;
     this->hasOperator = true;
+    if(checkLastCharacter(this->calculationString)){
+        this->calculationString.back() = '-';
+    }
 }
 
 // handle the button "*"
@@ -226,6 +236,9 @@ void Calculator::on_buttonMultiply_clicked()
 {
     this->operation = Operators::Multiply;
     this->hasOperator = true;
+    if(checkLastCharacter(this->calculationString)){
+        this->calculationString.back() = 'x';
+    }
 }
 
 // handle the button "/"
@@ -233,5 +246,8 @@ void Calculator::on_buttonDivide_clicked()
 {
     this->operation = Operators::Divide;
     this->hasOperator = true;
+    if(checkLastCharacter(this->calculationString)){
+        this->calculationString.back() = '/';
+    }
 }
 
