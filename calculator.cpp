@@ -74,36 +74,32 @@ void Calculator::on_clearButton_clicked()
     ui->resultLabel->setText(QString::number(this->result));
 }
 
-
-void Calculator::on_button1_clicked()
+void Calculator::setOrCalculateResult()
 {
-    this->number = 1;
-
     if(!this->hasOperator)
         this->result = this->number;
     else
         this->calculateResult();
+}
+
+
+void Calculator::on_button1_clicked()
+{
+    this->number = 1;
+    setOrCalculateResult();
 }
 
 
 void Calculator::on_button2_clicked()
 {
     this->number = 2;
-
-    if(!this->hasOperator)
-        this->result = this->number;
-    else
-        this->calculateResult();
+    setOrCalculateResult();
 }
 
 
 void Calculator::on_button3_clicked()
 {
     this->number = 3;
-
-    if(!this->hasOperator)
-        this->result = this->number;
-    else
-        this->calculateResult();
+    setOrCalculateResult();
 }
 
