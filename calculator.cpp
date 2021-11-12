@@ -96,6 +96,7 @@ void Calculator::setOrCalculateResult()
 void Calculator::on_button0_clicked()
 {
     this->number = 0;
+    this->calculationString += "0";
     displayNumber();
     setOrCalculateResult();
 }
@@ -104,6 +105,7 @@ void Calculator::on_button0_clicked()
 void Calculator::on_button1_clicked()
 {
     this->number = 1;
+    this->calculationString += "1";
     displayNumber();
     setOrCalculateResult();
 }
@@ -112,6 +114,7 @@ void Calculator::on_button1_clicked()
 void Calculator::on_button2_clicked()
 {
     this->number = 2;
+    this->calculationString += "2";
     displayNumber();
     setOrCalculateResult();
 }
@@ -120,6 +123,7 @@ void Calculator::on_button2_clicked()
 void Calculator::on_button3_clicked()
 {
     this->number = 3;
+    this->calculationString += "3";
     displayNumber();
     setOrCalculateResult();
 }
@@ -128,6 +132,7 @@ void Calculator::on_button3_clicked()
 void Calculator::on_button4_clicked()
 {
     this->number = 4;
+    this->calculationString += "4";
     displayNumber();
     setOrCalculateResult();
 }
@@ -136,6 +141,7 @@ void Calculator::on_button4_clicked()
 void Calculator::on_button5_clicked()
 {
     this->number = 5;
+    this->calculationString += "5";
     displayNumber();
     setOrCalculateResult();
 }
@@ -144,6 +150,7 @@ void Calculator::on_button5_clicked()
 void Calculator::on_button6_clicked()
 {
     this->number = 6;
+    this->calculationString += "6";
     displayNumber();
     setOrCalculateResult();
 }
@@ -152,6 +159,7 @@ void Calculator::on_button6_clicked()
 void Calculator::on_button7_clicked()
 {
     this->number = 7;
+    this->calculationString += "7";
     displayNumber();
     setOrCalculateResult();
 }
@@ -160,6 +168,7 @@ void Calculator::on_button7_clicked()
 void Calculator::on_button8_clicked()
 {
     this->number = 8;
+    this->calculationString += "8";
     displayNumber();
     setOrCalculateResult();
 }
@@ -168,6 +177,7 @@ void Calculator::on_button8_clicked()
 void Calculator::on_button9_clicked()
 {
     this->number = 9;
+    this->calculationString += "9";
     displayNumber();
     setOrCalculateResult();
 }
