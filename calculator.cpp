@@ -127,6 +127,13 @@ void Calculator::updateCalculationLabel()
     ui->calculationLabel->setText(QString::fromStdString(this->calculationString));
 }
 
+// returns true if the numberString is one length long and it has the character zero
+// false otherwise
+bool Calculator::hasOneAndZero()
+{
+    return (this->numberString.length() == 1) && (this->numberString.back() == '0');
+}
+
 // handle the button 0
 void Calculator::on_button0_clicked()
 {

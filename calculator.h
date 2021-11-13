@@ -27,6 +27,7 @@ private slots:
     void setOrCalculateResult();
     bool checkLastCharacter(const std::string obj_string);
     void updateCalculationLabel();
+    bool hasOneAndZero();
 
     void on_button0_clicked();
     void on_button1_clicked();
