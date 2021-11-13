@@ -24,10 +24,12 @@ private slots:
     void displayNumber();
     void on_buttonEqual_clicked();
     void on_clearButton_clicked();
-    void setOrCalculateResult();
-    bool checkLastCharacter(const std::string obj_string);
+
+    bool checkLastForOperator(const std::string obj_string);
     void updateCalculationLabel();
     bool hasOneAndZero();
+    void addNumber(char insertNumber);
+    void addOperator(Operators opEnum, char opChar);
 
     void on_button0_clicked();
     void on_button1_clicked();
@@ -47,12 +49,12 @@ private slots:
 
 private:
     Ui::Calculator *ui;
-    double result;
-    double number;
-    bool hasOperator;
-    Operators operation;
-    std::string numberString;
-    std::string calculationString;
-
+    double m_result;
+    double m_number;
+    bool m_hasOperator;
+    bool m_isFirstTime;
+    Operators m_operation;
+    std::string m_numberString;
+    std::string m_calculationString;
 };
 #endif // CALCULATOR_H
