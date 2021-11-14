@@ -136,20 +136,28 @@ bool Calculator::hasOneAndZero()
 
 void Calculator::addNumber(char numberChosen)
 {
-    if(hasOneAndZero())
-        m_numberString.back() = numberChosen; // check if it is needed to replace the zero character
-    else
-        m_numberString += numberChosen;
+    bool isOk = true;
 
+    if(numberChosen == '.')
+    {
+        if(m_numberString.find_first_of('.') == std::string::npos)
+            m_numberString += numberChosen;
+        else
+            isOk = false;
+    }
+    else {
+        if(hasOneAndZero())
+            m_numberString.back() = numberChosen; // check if it is needed to replace the zero character
+        else
+            m_numberString += numberChosen;
+    }
 
-    if(checkLastForOperator(m_calculationString)) // check if there is an operator at last string position, in order to update the display
+    if(isOk) {
+        m_calculationString += numberChosen;
+        updateCalculationLabel();
         displayNumber();
+    }
 
-
-    m_calculationString += numberChosen;
-    updateCalculationLabel();
-    displayNumber();
-    //setOrCalculateResult();
 }
 
 void Calculator::addOperator(Operators opEnum, char opChar)
@@ -201,6 +209,9 @@ void Calculator::on_button8_clicked(){ addNumber('8'); }
 // handle the button 9
 void Calculator::on_button9_clicked(){ addNumber('9'); }
 
+// handle the button .
+void Calculator::on_buttonDecimal_clicked(){ addNumber('.'); }
+
 // handle the button "+"
 void Calculator::on_buttonPlus_clicked(){ addOperator(Operators::Sum, '+'); }
 
@@ -212,4 +223,7 @@ void Calculator::on_buttonMultiply_clicked(){ addOperator(Operators::Multiply, '
 
 // handle the button "/"
 void Calculator::on_buttonDivide_clicked(){ addOperator(Operators::Divide, '/'); }
+
+
+
 
