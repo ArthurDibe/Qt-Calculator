@@ -41,6 +41,7 @@ private slots:
     void on_button7_clicked();
     void on_button8_clicked();
     void on_button9_clicked();
+    void on_buttonDecimal_clicked();
 
     void on_buttonPlus_clicked();
     void on_buttonMinus_clicked();
