@@ -47,7 +47,9 @@ private slots:
     void on_buttonMinus_clicked();
     void on_buttonMultiply_clicked();
     void on_buttonDivide_clicked();
+    void on_factorialButton_clicked();
 
+    int factorial(const int n);
 private:
     Ui::Calculator *ui;
     double m_result;
