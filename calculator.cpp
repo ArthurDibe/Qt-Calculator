@@ -1,3 +1,5 @@
+#include<iostream>
+#include <climits> // UINT_MAX
 #include "calculator.h"
 #include "ui_calculator.h"
 
@@ -226,4 +228,33 @@ void Calculator::on_buttonDivide_clicked(){ addOperator(Operators::Divide, '/');
 
 
 
+void Calculator::on_factorialButton_clicked()
+{
+    m_calculationString += '!';
+    updateCalculationLabel();
+
+    try{
+        m_result = factorial(std::stoi(m_numberString));
+        if(m_result <= 0) throw "ERROR";
+        m_numberString = std::to_string((unsigned)m_result);
+        m_calculationString = m_numberString;
+    }
+    catch(const char* msg){
+        m_calculationString = msg;
+        m_numberString = msg;
+        updateCalculationLabel();
+        m_result = 0;
+        std::cout << msg << std::endl;
+    }
+
+    displayResult();
+}
+
+int Calculator::factorial(const int n){
+    int result = 1;
+    if(n > 1){
+        result *= n * factorial(n-1);
+    }
+    return result;
+}
 
